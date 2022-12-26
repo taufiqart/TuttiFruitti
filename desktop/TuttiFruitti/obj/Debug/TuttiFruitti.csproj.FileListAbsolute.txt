@@ -1,0 +1,14 @@
+D:\Pelatihan\TuttiFruitti\TuttiFruitti\bin\Debug\TuttiFruitti.exe.config
+D:\Pelatihan\TuttiFruitti\TuttiFruitti\bin\Debug\TuttiFruitti.exe
+D:\Pelatihan\TuttiFruitti\TuttiFruitti\bin\Debug\TuttiFruitti.pdb
+D:\Pelatihan\TuttiFruitti\TuttiFruitti\obj\Debug\TuttiFruitti.csproj.AssemblyReference.cache
+D:\Pelatihan\TuttiFruitti\TuttiFruitti\obj\Debug\TuttiFruitti.csproj.SuggestedBindingRedirects.cache
+D:\Pelatihan\TuttiFruitti\TuttiFruitti\obj\Debug\TuttiFruitti.GUI.Login.resources
+D:\Pelatihan\TuttiFruitti\TuttiFruitti\obj\Debug\TuttiFruitti.Properties.Resources.resources
+D:\Pelatihan\TuttiFruitti\TuttiFruitti\obj\Debug\TuttiFruitti.csproj.GenerateResource.cache
+D:\Pelatihan\TuttiFruitti\TuttiFruitti\obj\Debug\TuttiFruitti.csproj.CoreCompileInputs.cache
+D:\Pelatihan\TuttiFruitti\TuttiFruitti\obj\Debug\TuttiFruitti.exe
+D:\Pelatihan\TuttiFruitti\TuttiFruitti\obj\Debug\TuttiFruitti.pdb
+D:\Pelatihan\TuttiFruitti\TuttiFruitti\bin\Debug\Guna.UI2.dll
+D:\Pelatihan\TuttiFruitti\TuttiFruitti\obj\Debug\TuttiFruitti.csproj.CopyComplete
+D:\Pelatihan\TuttiFruitti\TuttiFruitti\obj\Debug\TuttiFruitti.GUI.Menu.resources
