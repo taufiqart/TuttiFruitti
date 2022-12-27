@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('screenshots', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('timesheets_id')->constrained();
+            $table->string('screenshot');
             $table->timestamps();
         });
     }

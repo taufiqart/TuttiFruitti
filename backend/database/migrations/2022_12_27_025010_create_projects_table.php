@@ -15,6 +15,16 @@ return new class extends Migration
     {
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->text('description')->nullable();
+            $table->foreignId('client_id')->constrained();
+            $table->string('pay_type')->nullable();
+            $table->string('based_on')->nullable();
+            $table->string('cost')->nullable();
+            $table->string('hours')->nullable();
+            $table->string('notify')->nullable();
+            $table->boolean('status')->nullable();
+            $table->date('start_date')->nullable();
             $table->timestamps();
         });
     }

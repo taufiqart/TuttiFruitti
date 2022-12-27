@@ -15,6 +15,14 @@ return new class extends Migration
     {
         Schema::create('organizations', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('industri');
+            $table->text('address');
+            $table->string('logo')->nullable();
+            $table->integer('tax_id')->nullable();
+            $table->string('currency')->nullable();
+            $table->date('start')->nullable();
+            $table->string('time_zone')->nullable();
             $table->timestamps();
         });
     }

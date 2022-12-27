@@ -15,6 +15,15 @@ return new class extends Migration
     {
         Schema::create('timesheets', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('project_id')->constrained();
+            $table->foreignId('todo_id')->constrained();
+            $table->time('time_span')->nullable();
+            $table->string('timer')->nullable();
+            $table->date('form')->nullable();
+            $table->date('to')->nullable();
+            $table->string('alasan')->nullable();
+            $table->string('everages_mouse')->nullable();
+            $table->string('everages_keyboard')->nullable();
             $table->timestamps();
         });
     }

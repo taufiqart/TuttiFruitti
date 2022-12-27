@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('apps', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('timesheets_id')->constrained();
+            $table->string('app');
             $table->timestamps();
         });
     }
