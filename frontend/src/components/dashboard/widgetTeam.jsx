@@ -1,17 +1,12 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import DashboardNavItem from './dashboardNavItem'
 
 export default function WidgetTeam() {
     return (
-        <div className="dashboard widgets" data-batch-widget-url="https://app.hubstaff.com/dashboard/479871/widget_batch/team" data-type="team" data-update-url="https://app.hubstaff.com/dashboard/479871/update" data-widget-url="/widget/__WIDGET_ID__.json">
+        <div className="dashboard widgets" data-batch-widget-url="/widget_batch/team" data-type="team" data-update-url="/update" data-widget-url="/widget/__WIDGET_ID__.json">
             <div className="dashboard-nav">
-                <ul className="nav nav-tabs item">
-                    <li>
-                        <a href="https://app.hubstaff.com/dashboard/479871/me">Me</a>
-                    </li>
-                    <li className="active">
-                        <a href="https://app.hubstaff.com/dashboard/479871/team">All</a>
-                    </li>
-                </ul>
+                <DashboardNavItem />
                 <div className="dropdown item">
                     <a aria-expanded="true" aria-haspopup="true" className="h-auto dropdown-toggle btn btn-default" data-toggle="dropdown" href="#">Manage widgets</a>
                     <ul className="dropdown-menu dropdown-menu-right widget-dropdown toggling-dropdown">

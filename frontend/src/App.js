@@ -13,8 +13,14 @@ import Footer from './components/footer';
 // import User from './pages/user';
 import { useEffect, useState } from 'react';
 import Register from './pages/register';
-import Dashboard from './pages/dashboard';
+import Dashboard from './pages/dashboard/dashboard';
 import Home from './pages/home';
+import Timesheet from './pages/dashboard/timesheet';
+import WidgetMe from './components/dashboard/widgetMe';
+import Hamburger from './components/dashboard/hamburger';
+import Sidebar from './components/dashboard/sidebar';
+import WidgetTeam from './components/dashboard/widgetTeam';
+import ViewAndEdit from './components/dashboard/viewAndEdit';
 // import Logout from './pages/logout';
 
 function App() {
@@ -30,7 +36,6 @@ function App() {
           window.location.pathname == '/register' || window.location.pathname == '/' ?
             <>
               <Navbar />
-
               <Routes>
                 <Route path='/register' element={<Register />} />
                 <Route path='/' element={<Home />} />
@@ -38,17 +43,29 @@ function App() {
               <Route path='/product' element={<Product />} />
               <Route path='/product/:slug' element={<ProductDetail />} />
             <Route path='/creator/:username' element={<User />} /> */}
-
               </Routes>
               <Footer />
             </> :
-            <Routes>
-              <Route path='/dashboard' element={<Dashboard />} />
+            <div className="main-wrapper">
+              <Sidebar />
+              <Hamburger />
+              <div className="content-wrapper">
+                <div className="container-fluid">
+                  <div className="w-full h-12 "></div>
+                  <Routes>
 
-              <Route path='/login' element={<Login />} />
-            </Routes>
+                    <Route path='/dashboard' element={<Dashboard children={<WidgetMe />} />} />
+                    <Route path='/dashboard/team' element={<Dashboard children={<WidgetTeam />} />} />
+                    <Route path='/dashboard/me' element={<Dashboard children={<WidgetMe />} />} />
+                    <Route path='/organizations/timesheets' element={<Timesheet />} />
+                    <Route path='/organizations/time_entries' element={<ViewAndEdit />} />
+                    <Route path='/login' element={<Login />} />
+                  </Routes>
+                </div >
+              </div>
+            </div>
+
         }
-
       </Router >
     </div >
   );
