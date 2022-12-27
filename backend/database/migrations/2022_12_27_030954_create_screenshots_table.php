@@ -13,10 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('team_project', function (Blueprint $table) {
+        Schema::create('screenshots', function (Blueprint $table) {
             $table->id();
-            $table->integer('team_id');
-            $table->integer('project_id');
             $table->timestamps();
         });
     }
@@ -28,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('team_project');
+        Schema::dropIfExists('screenshots');
     }
 };

@@ -13,10 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('team', function (Blueprint $table) {
-            $table->id('team_id');
-            $table->string('name'); //nama tim
-            $table->integer('leader'); //select leader mengambil dari user
+        Schema::create('apps', function (Blueprint $table) {
+            $table->id();
             $table->timestamps();
         });
     }
@@ -28,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('team');
+        Schema::dropIfExists('apps');
     }
 };

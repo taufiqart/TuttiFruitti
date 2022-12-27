@@ -14,14 +14,13 @@ return new class extends Migration
     public function up()
     {
         Schema::create('todos', function (Blueprint $table) {
-            $table->id('todos_id');
+            $table->id();
             $table->string('name');
-            $table->integer('category_id'); //memilih Category dari table category
-            $table->string('decription')->nullable();   //deskripsi 
-            $table->string('attachments')->nullable();  //upload file 
-            $table->date('start_date')->nullable(); //tanggal dimulai 
-            $table->date('due_date')->nullable();   //deadline
-            $table->time('estimate')->nullable();   //waaktu pengerjaan
+            $table->text('description');
+            $table->date('start_date');
+            $table->date('due_date');
+            $table->time('estimate');
+            $table->foreignId('category_todo_id')->constrained();
             $table->timestamps();
         });
     }

@@ -13,10 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('category', function (Blueprint $table) {
-            $table->id('category_id');
-            $table->string('name');
-            $table->string('type'); //ada beberapa tipe yaitu normal / selesai / icebox
+        Schema::create('category_todos', function (Blueprint $table) {
+            $table->id();
             $table->timestamps();
         });
     }
@@ -28,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('category');
+        Schema::dropIfExists('category_todos');
     }
 };

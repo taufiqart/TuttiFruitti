@@ -13,11 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('comment', function (Blueprint $table) {
-            $table->id('comment_id');
-            $table->integer('todos_id');// ambil todos_id dari table todos
-            $table->integer('user_id');// ambil user_id dari table users untuk mengambil gambar user saat comment
-            $table->string('comment');//isi dari comment
+        Schema::create('teams', function (Blueprint $table) {
+            $table->id();
             $table->timestamps();
         });
     }
@@ -29,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('comment');
+        Schema::dropIfExists('teams');
     }
 };
