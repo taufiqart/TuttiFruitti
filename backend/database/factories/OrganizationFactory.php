@@ -23,7 +23,7 @@ class OrganizationFactory extends Factory
             'logo' => fake()->imageUrl(640, 480, 'animals', true),
             // 'tax_id' => fake()->name(),
             'currency' => fake()->currencyCode(),
-            'start' => fake()->time(),
+            'start' => fake()->date(),
             'time_zone' => fake()->timezone(),
         ];
     }
