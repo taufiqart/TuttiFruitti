@@ -1,15 +1,13 @@
 import React from 'react'
+import DashboardNavItem from './dashboardNavItem'
 
 function WidgetMe() {
     return (
-        <div className="dashboard widgets" data-batch-widget-url="https://app.hubstaff.com/dashboard/479871/widget_batch/me"
-            data-type="me" data-update-url="https://app.hubstaff.com/dashboard/479871/update"
-            data-widget-url="https://app.hubstaff.com/dashboard/479871/widget/me/__WIDGET_ID__.json">
+        <div className="dashboard widgets" data-batch-widget-url="/widget_batch/me"
+            data-type="me" data-update-url="/update"
+            data-widget-url="/widget/me/__WIDGET_ID__.json">
             <div className="dashboard-nav">
-                <ul className="nav nav-tabs item">
-                    <li className="active"><a href="https://app.hubstaff.com/dashboard/479871/me">Me</a></li>
-                    <li><a href="https://app.hubstaff.com/dashboard/479871/team">All</a></li>
-                </ul>
+                <DashboardNavItem />
                 <div className="dropdown item"><a aria-expanded="false" aria-haspopup="true" className="dropdown-toggle btn btn-default"
                     data-toggle="dropdown" href="#">Manage widgets</a>
                     <ul className="dropdown-menu dropdown-menu-right widget-dropdown toggling-dropdown">
