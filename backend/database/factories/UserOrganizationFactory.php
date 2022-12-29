@@ -20,7 +20,7 @@ class UserOrganizationFactory extends Factory
         $faker = faker::create();
         return [
             'user_id' => $faker->numberBetween(1,10),
-            'organization_id' => $faker->numberBetween(1,10),
+            'organizations_id' => $faker->numberBetween(1,10),
         ];
     }
 }

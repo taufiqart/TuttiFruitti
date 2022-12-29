@@ -17,8 +17,10 @@ class OrganizationProjectFactory extends Factory
      */
     public function definition()
     {
+        $faker = faker::create();
         return [
-            //
+            'organizations_id' => $faker->numberBetween(1,10),
+            'project_id' => $faker->numberBetween(1,10),
         ];
     }
 }
