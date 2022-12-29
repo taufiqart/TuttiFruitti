@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CategoryTodo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class CategoryTodoController extends Controller
 {
@@ -13,7 +15,12 @@ class CategoryTodoController extends Controller
      */
     public function index()
     {
-        //
+        $categoryTodo = CategoryTodo::all();
+        return response()->json([
+            "status" => 200,
+            "msg"=>"Success",
+            "data" => $categoryTodo
+        ]);
     }
 
     /**
@@ -34,7 +41,25 @@ class CategoryTodoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validData = Validator::make($request->all(),[
+            "name" => 'required',
+            "type" => 'required',
+            'project_id' => 'required',
+        ]);
+
+        if($validData->fails()){
+            return response()->json([
+                "status" => 422,
+                "message" => "Validation error",
+                "errors" => $validData->errors()
+            ]);
+        }
+        $create = CategoryTodo::create($request->all());
+        return response()->json([
+            "status" => 200,
+            "message" => "Success created",
+            "data" => $create
+        ]);
     }
 
     /**
@@ -43,9 +68,13 @@ class CategoryTodoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(CategoryTodo $categorytodo)
     {
-        //
+        return response()->json([
+            "status" => 200,
+            "message" => "Success",
+            "data" => $categorytodo
+        ]);
     }
 
     /**
@@ -66,9 +95,28 @@ class CategoryTodoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, CategoryTodo $categorytodo)
     {
-        //
+        $validData = Validator::make($request->all(),[
+            "name" => 'required',
+            "type" => 'required',
+            'project_id' => 'required',
+        ]);
+
+        if($validData->fails()){
+            return response()->json([
+                "status" => 422,
+                "message" => "Validation error",
+                "errors" => $validData->errors()
+            ]);
+        }
+        $update = CategoryTodo::find($categorytodo->id)->update($request->all());
+        $update = CategoryTodo::find($categorytodo->id);
+        return response()->json([
+            "status" => 200,
+            "message" => "Success updated",
+            "data" => $update
+        ]);
     }
 
     /**
@@ -77,8 +125,13 @@ class CategoryTodoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(CategoryTodo $categorytodo)
     {
-        //
+        CategoryTodo::find($categorytodo->id)->delete();
+        return response()->json([
+            "status" => 200,
+            "message" => "Success deleted",
+            "data" => null
+        ]);
     }
 }
