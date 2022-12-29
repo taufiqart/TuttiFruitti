@@ -15,6 +15,9 @@ return new class extends Migration
     {
         Schema::create('cheklists', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('todo_id')->constrained();
+            $table->string('name');
+            $table->boolean('chek')->nullable();
             $table->timestamps();
         });
     }

@@ -15,6 +15,9 @@ return new class extends Migration
     {
         Schema::create('category_todos', function (Blueprint $table) {
             $table->id();
+            $table->string('name',25);
+            $table->integer('type');
+            $table->foreignId('project_id')->constrained();
             $table->timestamps();
         });
     }
