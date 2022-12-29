@@ -21,6 +21,8 @@ import Hamburger from './components/dashboard/hamburger';
 import Sidebar from './components/dashboard/sidebar';
 import WidgetTeam from './components/dashboard/widgetTeam';
 import ViewAndEdit from './components/dashboard/viewAndEdit';
+import Modal from './components/dashboard/modal';
+import ModalEdit from './components/dashboard/modalEdit';
 // import Logout from './pages/logout';
 
 function App() {
@@ -39,10 +41,6 @@ function App() {
               <Routes>
                 <Route path='/register' element={<Register />} />
                 <Route path='/' element={<Home />} />
-                {/* <Route exact path='/' element={<Home />} />
-              <Route path='/product' element={<Product />} />
-              <Route path='/product/:slug' element={<ProductDetail />} />
-            <Route path='/creator/:username' element={<User />} /> */}
               </Routes>
               <Footer />
             </> :
@@ -53,10 +51,9 @@ function App() {
                 <div className="container-fluid">
                   <div className="w-full h-12 "></div>
                   <Routes>
-
-                    <Route path='/dashboard' element={<Dashboard children={<WidgetMe />} />} />
-                    <Route path='/dashboard/team' element={<Dashboard children={<WidgetTeam />} />} />
-                    <Route path='/dashboard/me' element={<Dashboard children={<WidgetMe />} />} />
+                    <Route path='/dashboard' element={<Dashboard><WidgetMe /></Dashboard>} />
+                    <Route path='/dashboard/team' element={<Dashboard><WidgetTeam /></Dashboard>} />
+                    <Route path='/dashboard/me' element={<Dashboard><WidgetMe /></Dashboard>} />
                     <Route path='/organizations/timesheets' element={<Timesheet />} />
                     <Route path='/organizations/time_entries' element={<ViewAndEdit />} />
                     <Route path='/login' element={<Login />} />
@@ -64,8 +61,11 @@ function App() {
                 </div >
               </div>
             </div>
-
         }
+        {/* modal edit  */}
+        <Modal id="modal-edit">
+          <ModalEdit />
+        </Modal>
       </Router >
     </div >
   );

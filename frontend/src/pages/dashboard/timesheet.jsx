@@ -1,6 +1,6 @@
 import React, { Children } from 'react'
 
-export default function Timesheet({ Children }) {
+export default function Timesheet({ children }) {
     return (
         <>
             <h2 className="text-left page-heading gs-open">
@@ -10,7 +10,7 @@ export default function Timesheet({ Children }) {
                     <time dateTime="2022-12-25">Sun, Dec 25, 2022</time>
                 </div>
             </h2>
-            {Children}
+            {children}
         </>
 
     )

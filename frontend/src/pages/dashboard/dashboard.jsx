@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Children } from 'react'
 import Sidebar from '../../components/dashboard/sidebar'
 import Hamburger from '../../components/dashboard/hamburger'
 import WidgetTeam from '../../components/dashboard/widgetTeam'
